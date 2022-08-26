@@ -1,0 +1,27 @@
+{
+  "name": "sqs",
+  "version": "1.0.0",
+  "main": "server.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^18.7.11",
+    "@typescript-eslint/eslint-plugin": "^5.35.1",
+    "@typescript-eslint/parser": "^5.35.1",
+    "eslint": "^8.22.0",
+    "nodemon": "^2.0.12",
+    "typescript": "^4.7.4"
+  },
+  "scripts": {
+    "start": "npm run serve",
+    "dev": "concurrently \"npm run build:watch\" \"npm run serve:watch\"",
+    "serve": "node dist/server",
+    "serve:watch": "nodemon dist/server.js",
+    "build": "tsc",
+    "build:watch": "tsc -w"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.154.0",
+    "aws-sdk": "^2.1200.0",
+    "concurrently": "^6.2.0"
+  }
+}
